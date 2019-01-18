@@ -1,0 +1,131 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Universe",
+		"_postman_id": "72ab91f8-ebd9-77fa-5122-1d8c28f68623",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Universe",
+			"request": {
+				"url": "http://localhost:8080/tasks/universe/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"universeName\" : \"Solar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Person Dupe",
+			"request": {
+				"url": "http://localhost:8080/tasks/person/createperson",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"compositeKey\": {\n\n    \"personId\": 3,\n    \"universeId\": 2\n\n},\n\"familyId\": 1,\n\"personName\": \"Avin\",\n\"power\": \"negative\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Family Dupe",
+			"request": {
+				"url": "http://localhost:8080/tasks/family/createfamily",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"compositeKey\": {\n\n    \"familyId\": 3,\n    \"universeId\": 3\n\n},\n\"familyName\": \"G\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List",
+			"request": {
+				"url": "http://localhost:8080/tasks/family/id/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"familyId\" : 1,\n\t\"universeId\" : 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Balance",
+			"request": {
+				"url": "http://localhost:8080/tasks/balance/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"familyId\" : 1,\n\t\"universeId\" : 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Balance Power",
+			"request": {
+				"url": "http://localhost:8080/tasks/balance/families",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"familyId\" : 1,\n\t\"universeId\" : 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

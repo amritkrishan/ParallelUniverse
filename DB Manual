@@ -1,0 +1,26 @@
+CREATE TABLE family(  
+   family_id INT NOT NULL,  
+   universe_id INT NOT NULL,
+   FOREIGN KEY (universe_id) REFERENCES universe (universe_id),
+   PRIMARY KEY ( family_id, universe_id )  
+);  
+
+CREATE TABLE universe(universe_id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY ( universe_id )
+);
+
+CREATE TABLE person( 
+   person_id INT NOT NULL,
+   power VARCHAR(1) NOT NULL,
+   family_id INT NOT NULL,  
+   universe_id INT NOT NULL, 
+   FOREIGN KEY (family_id) REFERENCES family (family_id),
+   FOREIGN KEY (universe_id) REFERENCES universe (universe_id),
+   PRIMARY KEY ( person_id, universe_id )  
+); 
+
+INSERT INTO universe (universe_name,universe_id) VALUES ("A",1);
+
+INSERT INTO family (family_id,universe_id,family_name) VALUES(1,1,"A");
+
+INSERT INTO person (person_id,power,person_name,family_id,universe_id) VALUES(1,"positive","A",1,1);
