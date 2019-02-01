@@ -1,5 +1,7 @@
 package com.universe.tasks.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -11,10 +13,12 @@ public class Universe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "universe_id")
+    @ApiModelProperty(notes = "Universe id auto-generated")
     private int universeId;
 
     @Column(name = "universe_name")
     @NotNull
+    @ApiModelProperty(notes = "Universe name")
     private String universeName;
 
     @OneToMany(cascade = CascadeType.ALL)

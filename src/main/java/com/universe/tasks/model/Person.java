@@ -1,5 +1,7 @@
 package com.universe.tasks.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,15 +9,18 @@ import javax.persistence.*;
 public class Person {
 
     @Column(name = "power")
+    @ApiModelProperty(notes = "Power")
     private String power;
 
     @EmbeddedId
     private PersonId compositeKey;
 
     @Column(name = "person_name")
+    @ApiModelProperty(notes = "Person Name")
     private String personName;
 
     @Column(name = "family_id")
+    @ApiModelProperty(notes = "Family id")
     private int familyId;
 
 

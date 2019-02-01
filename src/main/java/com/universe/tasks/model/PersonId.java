@@ -1,6 +1,8 @@
 package com.universe.tasks.model;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;

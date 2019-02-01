@@ -1,5 +1,7 @@
 package com.universe.tasks.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -13,6 +15,7 @@ public class Family {
 
     @Column(name = "family_name")
     @NotNull
+    @ApiModelProperty(notes = "Family Name")
     private String familyName;
 
     @OneToMany(cascade = CascadeType.ALL)
