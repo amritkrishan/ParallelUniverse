@@ -36,7 +36,7 @@ public class BalanceServiceImpl {
             int tmpPosCount=-1;
             int tmpNegCount=-1;
             for (Universe u: universes){
-                int uid=u.getId();
+                int uid=u.getUniverseId();
                 int posCount=0;
                 int negCount=0;
                 if(personRepository.getGroupedPersonPositiveData(uid,fid)!=null){

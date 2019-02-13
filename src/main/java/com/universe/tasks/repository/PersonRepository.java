@@ -10,6 +10,9 @@ import java.util.List;
 
 public interface PersonRepository extends JpaRepository<Person, PersonId> {
 
+    @Query(value="SELECT * FROM person",nativeQuery = true)
+    List<Person> findAll();
+
     @Query(value="SELECT * FROM person WHERE universe_id = ?1 AND family_id = ?1 AND power = 'positive'",nativeQuery = true)
     List<Person> getFilteredPersonsPositive(int universeId,int familyId);
 

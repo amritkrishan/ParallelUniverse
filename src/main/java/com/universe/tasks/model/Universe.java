@@ -29,11 +29,11 @@ public class Universe {
     @JoinColumn(name = "universe_id", referencedColumnName = "universe_id")
     private List<Person> persons;
 
-    public int getId() {
+    public int getUniverseId() {
         return universeId;
     }
 
-    public void setId(int universeId) {
+    public void setUniverseId(int universeId) {
         this.universeId = universeId;
     }
 
